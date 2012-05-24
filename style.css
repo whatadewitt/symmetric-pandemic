@@ -13,7 +13,7 @@ body { margin: 0; background: #ffffff; font-family: Tahoma, Geneva, sans-serif; 
 .card .inner .content .header { padding: 10px; background: #000000; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
 .card .inner .content h2 { margin: 0; color: #e8e8e8; display: inline; vertical-align: top; margin-left: 5px; }
 .card .inner .content .ball { border-radius: 50%; width: 30px; height: 30px; display: inline-block; }
-.card .inner .content .map { background: url(map.jpg) center; -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomleft: 5px; -moz-border-radius-bottomright: 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; width: 280px; height: 90px; }
+.card .inner .content .map { background: url(map.png) center; -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomleft: 5px; -moz-border-radius-bottomright: 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; width: 280px; height: 90px; }
 
 .card.red .inner, .card.red .inner .ball { background-color: #ff0000; }
 .card.blue .inner, .card.blue .inner .ball { background-color: #0000ff; }
@@ -31,7 +31,7 @@ body { margin: 0; background: #ffffff; font-family: Tahoma, Geneva, sans-serif; 
 .card.event .inner .ball { background: url(epidemic.jpg) center; position: relative; position: relative; top: 55px; left: 55px; }
 
 .infection.card .inner { background: #fff; }
-.infection.card .inner .content .map { background: url(map-ugly.jpg) center; }
+.infection.card .inner .content .map { background: url(map-ugly.png) center; }
 .infection.card .inner .ball { background-image: url(infection.png); background-position: center; background-repeat: no-repeat; }
 
 #counters { position: absolute; bottom: 0; width: 100%; display: block; }

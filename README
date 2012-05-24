@@ -1,0 +1,49 @@
+Summary:
+
+Symmetric Pandamic is a deck manger for the Pandemic boardgame. It uses a given seed to generate a deck order
+allowing repeated games and team vs team games. Symmetry is maintained even after the infection shuffles.
+
+Description:
+
+The current version uses only the following Special Event cards:
+Remote Transport
+Re-examined Research
+Rapid Vaccine Deployment
+Mobile Hospital
+Airlift
+Government Grant
+
+Some cards are excluded to prevent the decks from getting out of sync when shuffled, since we're using the 
+Special Event cards from both the base game and the On The Brink expansion and you don't use all the cards
+in a given game anyway we thought this was an acceptable tradeoff. If playing with 4+ Players you might see
+special event cards named something like "Special 7". Agree beforehand what these cards are, either copies of
+the above cards, or something custom (that doesn't affect card drawing ideally).
+
+Infections are handled by the application, with the bottom card being drawn and the shuffling taking place.
+
+Ideally you should have the player cards available and hand them out as they get drawn by the app.
+
+The game plays as normal, including setup other than when you would normally reach for a card from the pile you
+instead click the appropriate draw button in the app.
+
+Related Links:
+http://statuswoe.blogspot.ca/2012/05/symmetric-pandemic.html
+
+Developer: Luke Dewitt (@whatadewitt)
+Concept/Design: Luke Dewitt, Mike McGraw, Brent Smith (@brentsmith_dev)
+
+Pandemic was designed by Matt Leacock 
+Pandemic: http://www.zmangames.com/boardgames/pandemic.htm
+
+Remember, the more copies of Pandemic you own the more teams you can have :)
+
+Licence: Luke, add whatever licence you want
+
+Images (Maps) are in the public domain and were available here as of May 2012:
+https://www.cia.gov/library/publications/the-world-factbook/
+
+Enjoy!
+
+
+
+
