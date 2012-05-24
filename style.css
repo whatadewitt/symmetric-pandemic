@@ -1,0 +1,52 @@
+body { margin: 0; background: #ffffff; font-family: Tahoma, Geneva, sans-serif; }
+#game { width: 300px; height: 450px; position: relative; display: block; margin: 5px 10px; }
+
+.button { position: absolute; width: 280px; left: 0; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 10px; border: 0; color: #ffffff; font-weight: bold; text-align: center; }
+
+.button#draw_player { top: 0; background: #0c7d9f; }
+.button#draw_infection { bottom: 35px; background: #5e6438; }
+
+#board { position: absolute; top: 45px; }
+
+.card { padding: 5px; background: #000000; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; height: 150px; width: 290px; margin-bottom: 5px; }
+.card .inner { padding: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; height: 140px; }
+.card .inner .content .header { padding: 10px; background: #000000; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.card .inner .content h2 { margin: 0; color: #e8e8e8; display: inline; vertical-align: top; margin-left: 5px; }
+.card .inner .content .ball { border-radius: 50%; width: 30px; height: 30px; display: inline-block; }
+.card .inner .content .map { background: url(map.jpg) center; -webkit-border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomleft: 5px; -moz-border-radius-bottomright: 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; width: 280px; height: 90px; }
+
+.card.red .inner, .card.red .inner .ball { background-color: #ff0000; }
+.card.blue .inner, .card.blue .inner .ball { background-color: #0000ff; }
+.card.yellow .inner, .card.yellow .inner .ball { background-color: #ffff00; }
+.card.black .inner, .card.black .inner .ball { background-color: #666666; }
+
+.card.infections .inner, .card.event .inner { background: #ffffff; }
+
+.card.infections .content { -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; height: 140px; width: 280px; background: #4b6a65; position: absolute; }
+.card.infections .content h2 { color: #ffc00c; position: relative; top: 55px; left: 55px; margin: 0; }
+.card.infections .inner .ball { background: url(epidemic.jpg) center; position: relative; position: relative; top: 55px; left: 55px; }
+
+.card.event .content { -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; height: 140px; width: 280px; background: #000000; position: absolute; }
+.card.event .content h2 { color: #ffffff; position: relative; top: 55px; left: 0; margin: 0; display: block; text-align: center; }
+.card.event .inner .ball { background: url(epidemic.jpg) center; position: relative; position: relative; top: 55px; left: 55px; }
+
+.infection.card .inner { background: #fff; }
+.infection.card .inner .content .map { background: url(map-ugly.jpg) center; }
+.infection.card .inner .ball { background-image: url(infection.png); background-position: center; background-repeat: no-repeat; }
+
+#counters { position: absolute; bottom: 0; width: 100%; display: block; }
+#counters div { display: inline; width: 40px; height: 30px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; border: 1px solid #333; padding: 5px 5px 5px 45px; }
+
+#counters div#player_counter { background: url(pcardicon.png) no-repeat 5px center #0c7d9f; }
+#counters div#infection_counter { background: url(hazardicon.png) no-repeat 5px center #5e6438; }
+#counters .count { background: #fff; font-size: 10px; padding: 2px 5px; border: 1px solid #000; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; width: 30px; text-align: right; display: inline-block; }
+
+#counters div#reset { background: url(reseticon.png) no-repeat 5px center #999999; }
+#counters .reset { font-size: 12px; color: #333333; padding: 2px 5px; width: 30px; display: inline-block; }
+
+#overlay { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: rgba(0, 0, 0, .7); }
+#overlay h4 { color: #fff; text-align: center; }
+#overlay #seed { display: block; margin: 0 auto; width: 150px; }
+#overlay input[type="button"] { display: block; margin: 10px auto 0;  width: 100px; }
+#overlay p { text-align: center; }
+#overlay .empty { border: 2px solid #ff0000; }
