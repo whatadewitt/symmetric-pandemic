@@ -252,7 +252,7 @@ function drawPlayer() {
 
 			clearNext = false;
 
-			drawInfection();
+			drawInfection(true);
 
 			resetInfections();
 
@@ -283,12 +283,17 @@ function drawPlayer() {
 	$('#player_counter .count').html(playerDeck.length);
 }
 
-function drawInfection() {
+function drawInfection(fromBottom) {
 	
 	if (clearNext)
 		$('#board').empty();
 
-	drawn.push(infectionDeck.pop());
+	fromBottom = typeof fromBottom !== 'undefined' ? fromBottom : false;
+	if (fromBottom)
+		drawn.push(infectionDeck.pop());
+	else
+		drawn.push(infectionDeck.shift());
+	
 	console.log(drawn);
 	var card_class = '';
 	if (locations_yellow.contains(drawn[drawn.length - 1])) card_class = "yellow";
