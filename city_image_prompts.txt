@@ -1,0 +1,58 @@
+// This file contains prompts for generating images of post-pandemic cityscapes for each city in the game.
+// Format: generate an image of a post-pandemic ridden cityscape of [CITY NAME] with a [COLOR VALUE] color tone.
+
+// RED cities
+// generate an image of a post-pandemic ridden cityscape of Beijing with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Seoul with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Tokyo with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Shanghai with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Osaka with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Taipei with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Hong Kong with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Bangkok with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Ho Chi Minh City with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Manila with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Jakarta with a red color tone.
+// generate an image of a post-pandemic ridden cityscape of Sydney with a red color tone.
+
+// BLUE cities
+// generate an image of a post-pandemic ridden cityscape of St. Petersburg with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Milan with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Essen with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Paris with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Madrid with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of London with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Toronto with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of New York with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Washington with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Atlanta with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of Chicago with a blue color tone.
+// generate an image of a post-pandemic ridden cityscape of San Francisco with a blue color tone.
+
+// YELLOW cities
+// generate an image of a post-pandemic ridden cityscape of Los Angeles with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Mexico City with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Miami with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Bogotá with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Lima with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Santiago with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Buenos Aires with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of São Paulo with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Kinshasa with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Lagos with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Khartoum with a yellow color tone.
+// generate an image of a post-pandemic ridden cityscape of Johannesburg with a yellow color tone.
+
+// BLACK cities
+// generate an image of a post-pandemic ridden cityscape of Chennai with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Kolkata with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Mumbai with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Delhi with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Karachi with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Riyadh with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Tehran with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Baghdad with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Istanbul with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Algiers with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Cairo with a black color tone.
+// generate an image of a post-pandemic ridden cityscape of Moscow with a black color tone.
