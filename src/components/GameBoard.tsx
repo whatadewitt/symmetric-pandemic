@@ -14,11 +14,8 @@ export const GameBoard: React.FC = () => {
     infectionDiscard,
     initialInfections,
     phase,
-    isLogVisible,
-    isEffectsVisible,
     drawPlayerCard,
     drawInfectionCard,
-    dealInitialCards,
     drawInfectionLevel,
     startGame,
     processEpidemicBottomCard,
@@ -271,7 +268,7 @@ export const GameBoard: React.FC = () => {
           )}
 
           {/* Game Action Buttons */}
-          {phase === "playing" && (
+          {(phase === "playing" || phase === "epidemic" || phase === "epidemic-waiting") && (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
               <button
                 onClick={handleDrawPlayer}

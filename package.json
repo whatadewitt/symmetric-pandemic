@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:gh-pages": "BASE_URL=/symmetric-pandemic/ npm run build",
     "preview": "vite preview",
+    "preview:gh-pages": "vite preview --base /symmetric-pandemic/",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",

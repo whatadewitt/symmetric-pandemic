@@ -1,5 +1,5 @@
 import { PlayerCard, InfectionCard, SpecialEventEffect } from './cards';
-import { GameLog, LogEntry } from './gameLog';
+import { GameLog } from './gameLog';
 
 export interface GameConfig {
   seed: string;

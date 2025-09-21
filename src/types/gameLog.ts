@@ -13,6 +13,8 @@ export interface LogEntry {
     epidemicNumber?: number;
     eventEffect?: string;
     gameResult?: 'win' | 'lose' | 'abandoned';
+    playerNumber?: number;
+    infectionLevel?: number;
   };
 }
 
