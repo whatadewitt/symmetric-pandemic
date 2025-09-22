@@ -15,6 +15,7 @@ export interface EventCard {
   description: string;
   requiresState?: boolean;
   handler?: string;
+  image?: string;
 }
 
 export interface EpidemicCard {
@@ -27,7 +28,6 @@ export type PlayerCard = CityCard | EventCard | EpidemicCard;
 export type InfectionCard = CityCard;
 
 export interface SpecialEventEffect {
-  oneQuietNight?: boolean;
   forecastPending?: InfectionCard[];
   resilientPopulationActive?: boolean;
 }

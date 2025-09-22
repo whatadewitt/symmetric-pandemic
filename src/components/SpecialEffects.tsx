@@ -38,7 +38,7 @@ export const SpecialEffects: React.FC = () => {
     }
   };
 
-  if (!specialEffects.oneQuietNight && !specialEffects.forecastPending && infectionDiscard.length === 0) {
+  if (!specialEffects.forecastPending && infectionDiscard.length === 0) {
     return null;
   }
 
@@ -46,16 +46,6 @@ export const SpecialEffects: React.FC = () => {
     <div className="bg-gray-800 rounded-xl shadow-lg p-6 mb-6">
       <h3 className="text-lg font-bold mb-4 text-pandemic-purple">Special Effects Active</h3>
       
-      {/* One Quiet Night */}
-      {specialEffects.oneQuietNight && (
-        <div className="flex items-center gap-3 p-3 bg-blue-900/30 rounded-lg mb-3">
-          <span className="text-2xl">🌙</span>
-          <div>
-            <p className="font-semibold">One Quiet Night Active</p>
-            <p className="text-sm opacity-75">Next infection phase will be skipped</p>
-          </div>
-        </div>
-      )}
 
       {/* Forecast */}
       {specialEffects.forecastPending && forecastOrder.length > 0 && (

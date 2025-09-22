@@ -117,9 +117,6 @@ export const CardDisplay: React.FC<CardDisplayProps> = ({
                 </>
               )}
             </div>
-            <div
-              className={`absolute ${size === "small" ? "top-1 right-1 w-2 h-2" : "top-3 right-3 w-4 h-4"} rounded-full bg-${card.color === "yellow" ? "yellow-400" : card.color === "red" ? "red-500" : card.color === "blue" ? "blue-500" : "gray-900"}`}
-            />
             {isInfection && (
               <div
                 className={`absolute ${size === "small" ? "top-1 left-1 text-xs" : size === "medium" ? "top-2 left-2 text-sm" : "top-3 left-3 text-2xl"} ${card.color === "yellow" ? "text-gray-900" : "text-yellow-400"}`}
@@ -141,7 +138,9 @@ export const CardDisplay: React.FC<CardDisplayProps> = ({
                   <div className="w-full h-48 bg-black/20 rounded-lg mb-4 overflow-hidden">
                     <CityImage cityName={card.name} imagePath={card.image} />
                   </div>
-                  <p className={`${sizeClasses.description} opacity-90 leading-relaxed`}>
+                  <p
+                    className={`${sizeClasses.description} opacity-90 leading-relaxed`}
+                  >
                     {card.description}
                   </p>
                 </div>

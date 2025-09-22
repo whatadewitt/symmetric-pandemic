@@ -43,8 +43,7 @@ export const EffectsPanel: React.FC = () => {
   };
 
   // Only show panel if there's an active effect
-  const hasActiveEffect = specialEffects.oneQuietNight || 
-                         specialEffects.forecastPending || 
+  const hasActiveEffect = specialEffects.forecastPending || 
                          specialEffects.resilientPopulationActive;
 
   if (!hasActiveEffect) return null;
@@ -71,16 +70,6 @@ export const EffectsPanel: React.FC = () => {
               <h3 className="text-lg font-bold text-center text-pandemic-purple">Active Effects</h3>
             </div>
 
-            {/* One Quiet Night */}
-            {specialEffects.oneQuietNight && (
-              <div className="flex items-center gap-3 p-3 bg-blue-900/30 rounded-lg mb-3 border border-blue-500/50">
-                <span className="text-2xl">🌙</span>
-                <div>
-                  <p className="font-semibold">One Quiet Night</p>
-                  <p className="text-sm opacity-75">Next infection phase will be skipped</p>
-                </div>
-              </div>
-            )}
 
             {/* Forecast */}
             {specialEffects.forecastPending && forecastOrder.length > 0 && (

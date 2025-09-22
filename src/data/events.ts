@@ -5,34 +5,39 @@ export const baseGameEvents: EventCard[] = [
     type: 'event',
     name: 'Airlift',
     description: 'Move any 1 pawn to any city. Get permission before moving another player\'s pawn.',
-    requiresState: false
+    requiresState: false,
+    image: 'images/airlift.png'
   },
   {
     type: 'event',
     name: 'Government Grant',
     description: 'Add 1 research station to any city (no City card needed).',
-    requiresState: false
+    requiresState: false,
+    image: 'images/governmentgrant.png'
   },
   {
     type: 'event',
     name: 'One Quiet Night',
     description: 'Skip the next Infect Cities step (do not flip over any Infection cards).',
     requiresState: true,
-    handler: 'oneQuietNight'
+    handler: 'oneQuietNight',
+    image: 'images/onequietnight.png'
   },
   {
     type: 'event',
     name: 'Forecast',
     description: 'Draw, look at, and rearrange the top 6 cards of the Infection Deck. Put them back on top.',
     requiresState: true,
-    handler: 'forecast'
+    handler: 'forecast',
+    image: 'images/forecast.png'
   },
   {
     type: 'event',
     name: 'Resilient Population',
     description: 'Remove any 1 card in the Infection Discard Pile from the game. You may play this between the Infect and Intensify steps of an epidemic.',
     requiresState: true,
-    handler: 'resilientPopulation'
+    handler: 'resilientPopulation',
+    image: 'images/resilientpopulation.png'
   }
 ];
 
