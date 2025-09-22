@@ -25,6 +25,7 @@ export const GameBoard: React.FC = () => {
   const [currentCard, setCurrentCard] = useState<PlayerCard | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [isCurrentCardInfection, setIsCurrentCardInfection] = useState(false);
 
   const handleDrawPlayer = () => {
     if (isDrawing || phase === "epidemic") return;
@@ -34,6 +35,7 @@ export const GameBoard: React.FC = () => {
     const card = drawPlayerCard();
     if (card) {
       setCurrentCard(card);
+      setIsCurrentCardInfection(false);
       setTimeout(() => setIsAnimating(false), 500);
     }
     // Prevent double-clicks
@@ -45,7 +47,13 @@ export const GameBoard: React.FC = () => {
 
     // Handle epidemic-waiting phase
     if (phase === "epidemic-waiting") {
-      processEpidemicBottomCard();
+      setIsAnimating(true);
+      const bottomCard = processEpidemicBottomCard();
+      if (bottomCard) {
+        setCurrentCard(bottomCard as PlayerCard);
+        setIsCurrentCardInfection(true);
+        setTimeout(() => setIsAnimating(false), 500);
+      }
       return;
     }
 
@@ -54,6 +62,7 @@ export const GameBoard: React.FC = () => {
     const card = drawInfectionCard();
     if (card) {
       setCurrentCard(card as PlayerCard);
+      setIsCurrentCardInfection(true);
       setTimeout(() => setIsAnimating(false), 500);
     }
     // Prevent double-clicks
@@ -140,7 +149,7 @@ export const GameBoard: React.FC = () => {
                   <div className="flex flex-wrap gap-3 justify-center">
                     {initialInfections[2].map((card, cardIndex) => (
                       <div key={cardIndex} className="relative">
-                        <CardDisplay card={card} size="small" />
+                        <CardDisplay card={card} size="small" isInfection={true} />
                         <div className="absolute -top-1 -right-1 bg-yellow-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                           1
                         </div>
@@ -158,7 +167,7 @@ export const GameBoard: React.FC = () => {
                   <div className="flex flex-wrap gap-3 justify-center">
                     {initialInfections[1].map((card, cardIndex) => (
                       <div key={cardIndex} className="relative">
-                        <CardDisplay card={card} size="small" />
+                        <CardDisplay card={card} size="small" isInfection={true} />
                         <div className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                           2
                         </div>
@@ -176,7 +185,7 @@ export const GameBoard: React.FC = () => {
                   <div className="flex flex-wrap gap-3 justify-center">
                     {initialInfections[0].map((card, cardIndex) => (
                       <div key={cardIndex} className="relative">
-                        <CardDisplay card={card} size="small" />
+                        <CardDisplay card={card} size="small" isInfection={true} />
                         <div className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                           3
                         </div>
@@ -192,9 +201,9 @@ export const GameBoard: React.FC = () => {
         {/* Main game area - Fills available height */}
         <div className="flex-1 flex flex-col">
           {/* Card Display - Main focus */}
-          {phase === "playing" && (
+          {(phase === "playing" || phase === "epidemic-waiting" || phase === "epidemic") && (
             <div className="bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 mb-4">
-              <CardDisplay card={currentCard} isAnimating={isAnimating} />
+              <CardDisplay card={currentCard} isAnimating={isAnimating} isInfection={isCurrentCardInfection} />
             </div>
           )}
 

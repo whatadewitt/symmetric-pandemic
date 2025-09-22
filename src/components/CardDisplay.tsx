@@ -6,12 +6,14 @@ interface CardDisplayProps {
   card: PlayerCard | null;
   isAnimating?: boolean;
   size?: "small" | "medium" | "large";
+  isInfection?: boolean;
 }
 
 export const CardDisplay: React.FC<CardDisplayProps> = ({
   card,
   isAnimating,
   size = "large",
+  isInfection = false,
 }) => {
   if (!card) {
     return (
@@ -118,29 +120,54 @@ export const CardDisplay: React.FC<CardDisplayProps> = ({
             <div
               className={`absolute ${size === "small" ? "top-1 right-1 w-2 h-2" : "top-3 right-3 w-4 h-4"} rounded-full bg-${card.color === "yellow" ? "yellow-400" : card.color === "red" ? "red-500" : card.color === "blue" ? "blue-500" : "gray-900"}`}
             />
+            {isInfection && (
+              <div
+                className={`absolute ${size === "small" ? "top-1 left-1 text-xs" : size === "medium" ? "top-2 left-2 text-sm" : "top-3 left-3 text-2xl"} ${card.color === "yellow" ? "text-gray-900" : "text-yellow-400"}`}
+              >
+                <i className="fas fa-biohazard"></i>
+              </div>
+            )}
           </>
         )}
 
         {card.type === "event" && (
-          <div className="flex flex-col items-center justify-center h-full text-center">
-            <div
-              className={`${sizeClasses.icon} ${size === "large" ? "mb-6" : "mb-1"}`}
-            >
-              ⚡
-            </div>
-            <h2
-              className={`${sizeClasses.title} font-bold ${size === "large" ? "mb-4" : "mb-1"}`}
-            >
-              {card.name}
-            </h2>
-            {size === "large" && (
-              <p
-                className={`${sizeClasses.description} opacity-90 leading-relaxed`}
-              >
-                {card.description}
-              </p>
+          <>
+            {size === "large" && card.image ? (
+              <>
+                <div className="text-center">
+                  <h2 className={`${sizeClasses.title} font-bold mb-4`}>
+                    {card.name}
+                  </h2>
+                  <div className="w-full h-48 bg-black/20 rounded-lg mb-4 overflow-hidden">
+                    <CityImage cityName={card.name} imagePath={card.image} />
+                  </div>
+                  <p className={`${sizeClasses.description} opacity-90 leading-relaxed`}>
+                    {card.description}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full text-center">
+                <div
+                  className={`${sizeClasses.icon} ${size === "large" ? "mb-6" : "mb-1"}`}
+                >
+                  ⚡
+                </div>
+                <h2
+                  className={`${sizeClasses.title} font-bold ${size === "large" ? "mb-4" : "mb-1"}`}
+                >
+                  {card.name}
+                </h2>
+                {size === "large" && (
+                  <p
+                    className={`${sizeClasses.description} opacity-90 leading-relaxed`}
+                  >
+                    {card.description}
+                  </p>
+                )}
+              </div>
             )}
-          </div>
+          </>
         )}
 
         {card.type === "epidemic" && (

@@ -14,11 +14,9 @@ interface GameStore extends GameState {
   drawPlayerCard: () => PlayerCard | null;
   drawInfectionCard: () => InfectionCard | null;
   handleEpidemic: () => void;
-  processEpidemicBottomCard: () => void;
-  playOneQuietNight: () => void;
+  processEpidemicBottomCard: () => InfectionCard | null;
   playResilientPopulation: () => void;
   playForecast: () => void;
-  skipInfectionPhase: () => void;
   setForecastCards: (cards: InfectionCard[]) => void;
   reorderForecastCards: (cards: InfectionCard[]) => void;
   removeFromInfectionDiscard: (card: InfectionCard) => void;
@@ -249,8 +247,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
       // Auto-activate certain events
       if (card.name === 'Resilient Population') {
         get().playResilientPopulation();
-      } else if (card.name === 'One Quiet Night') {
-        get().playOneQuietNight();
       } else if (card.name === 'Forecast') {
         get().playForecast();
       }
@@ -261,12 +257,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   drawInfectionCard: () => {
     const state = get();
-    
-    // Check for One Quiet Night effect
-    if (state.specialEffects.oneQuietNight) {
-      get().skipInfectionPhase();
-      return null;
-    }
 
     if (state.infectionDeck.length === 0) return null;
 
@@ -312,26 +302,26 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   processEpidemicBottomCard: () => {
     const currentState = get();
-    
+
     // Set phase to epidemic during processing
     set({ phase: 'epidemic' });
-    
+
     // Draw bottom card from infection deck
     const bottomCard = currentState.infectionDeck[currentState.infectionDeck.length - 1];
     if (!bottomCard) {
       set({ phase: 'playing' });
-      return;
+      return null;
     }
 
     const newInfectionDeck = currentState.infectionDeck.slice(0, -1);
-    
+
     // Add bottom card to discard
     const updatedDiscard = [...currentState.infectionDiscard, bottomCard];
-    
+
     // Shuffle discard pile using seeded random
     const rng = new SeededRandom(currentState.config.seed + '_epidemic_' + currentState.turnCount);
     const shuffled = rng.shuffle(updatedDiscard);
-    
+
     // Place shuffled cards on top of deck
     set({
       infectionDeck: [...shuffled, ...newInfectionDeck],
@@ -353,13 +343,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
     // Return to playing phase after a delay
     setTimeout(() => set({ phase: 'playing' }), 1500);
+
+    // Return the bottom card so it can be displayed
+    return bottomCard;
   },
 
-  playOneQuietNight: () => {
-    set(state => ({
-      specialEffects: { ...state.specialEffects, oneQuietNight: true }
-    }));
-  },
 
   playResilientPopulation: () => {
     set(state => ({
@@ -380,11 +368,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
     });
   },
 
-  skipInfectionPhase: () => {
-    set(state => ({
-      specialEffects: { ...state.specialEffects, oneQuietNight: false }
-    }));
-  },
 
   setForecastCards: (cards: InfectionCard[]) => {
     set(state => ({
