@@ -16,8 +16,8 @@ export const CityImage: React.FC<CityImageProps> = ({ cityName, imagePath }) => 
 
   // Convert original path to optimized paths
   const basename = imagePath.split('/').pop()?.replace('.png', '');
-  const webpPath = `/images/optimized/${basename}.webp`;
-  const jpegPath = `/images/optimized/${basename}.jpg`;
+  const webpPath = `images/optimized/${basename}.webp`;
+  const jpegPath = `images/optimized/${basename}.jpg`;
 
   return (
     <picture className="w-full h-full">

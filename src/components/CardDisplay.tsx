@@ -48,7 +48,7 @@ export const CardDisplay: React.FC<CardDisplayProps> = ({
       case "large":
       default:
         return {
-          container: "w-full h-96",
+          container: "w-96 h-96",
           text: "text-base",
           title: "text-2xl sm:text-3xl",
           description: "text-base sm:text-lg",
